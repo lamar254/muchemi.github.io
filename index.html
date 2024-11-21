@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muchemi's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1> WELCOME</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">ABOUT</a></li>
+          <li><a href="services.html">SERVICES</a></li>
+          <li><a href="projects.html">PROJECTS</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="cv.html">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="about">
+      <p class="intro-text">Software Engineer | Web Developer | Graphic Designer</p>
+      <div class="profile-pic-container">
+      <img src="images/software.jpg" alt="Your Picture" class="profile-pic">
+      <img src="images/webdev.jpg" alt="Your Picture" class="profile-pic">
+      <img src="images/graphic.jpg" alt="Your Picture" class="profile-pic">
+      </div>
+      <p style="font-size: 2.5rem; font-weight: bold; margin: 2rem 0; color: #ffffff;">
+        SWE MUCHEMI KEVIN
+      </p>
+      <p>"Welcome to my digital playground, where creativity meets precision. As a Software Engineer, Web Developer, and Graphic Designer, I thrive on crafting innovative solutions and visually stunning experiences. Explore my journey of turning ideas into impactful tech-driven realities."</p>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const typewriterText = "Welcome to Muchemi's Portfolio!";
+          let index = 0;
+          const typewriterElement = document.getElementById("typewriter-text");
+    
+          function typeText() {
+            if (index < typewriterText.length) {
+              typewriterElement.textContent += typewriterText[index];
+              index++;
+              setTimeout(typeText, 100);  // Adjust typing speed here (in milliseconds)
+            }
+          }
+    
+          typeText();
+        });
+      </script>
+    </section>
+  </main>
+  <footer>
+    <p>© 2024 Muchemi's Portfolio. All rights reserved.</p>
+  </footer>
+  
+</body>
+</html>

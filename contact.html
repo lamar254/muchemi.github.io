@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Muchemi</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1>WELCOME</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">ABOUT</a></li>
+          <li><a href="services.html">SERVICES</a></li>
+          <li><a href="projects.html">PROJECTS</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="cv.html">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="contact-section">
+      <div class="contact-container">
+        <h2><i class="fas fa-envelope-open-text"></i> Get In Touch</h2>
+        <form action="submit-contact.php" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="service">Selected Service:</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service...</option>
+              <option value="Web Development">Web Development</option>
+              <option value="Software Design and Development">Software Design and Development</option>
+              <option value="UI/UX Design">UI/UX Design</option>
+              <option value="Database Design and Management">Database Design and Management</option>
+              <option value="Mobile App Development">Mobile App Development</option>
+              <option value="Cloud Solutions Architecture">Cloud Solutions Architecture</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          
+          
+          <div class="form-group">
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <p class="form-note">* We'll get back to you within 24 hours</p>
+        </form>
+
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:lamarkevin572@gmail.com">lamarkevin572@gmail.com</a></p>
+          <p><i class="fas fa-phone"></i> +254 705557706</p>
+          <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2024 Muchemi's Portfolio. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    // Get service from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const serviceParam = urlParams.get('service');
+    
+    // Set selected service in dropdown if present
+    if (serviceParam) {
+      const serviceSelect = document.getElementById('service');
+      for (let option of serviceSelect.options) {
+        if (option.value === serviceParam) {
+          option.selected = true;
+          break;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
